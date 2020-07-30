@@ -1,0 +1,82 @@
+{% extends 'bbank/base.html' %}
+{%load static%} 
+{%block title_block%}
+<title>ABB Home</title> 
+{%endblock%} 
+{%block content%}
+<!--
+{% if user.is_authenticated%}
+  <div class="container">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading"></h4>
+        <p>if you are donor add your infomration here , once you complete 
+          adding your information, you will be in donors list </p> <-- TODO: view this msg in the first time only JS
+        <p>If you are seeker fill this form,please </p>
+        <p class="mb-0"></p>
+      </div>
+
+{%endif%}
+-->
+{% if messages %}
+<div class="container">
+  
+<div class="alert alert-primary" role="alert">
+  <h4 class="alert-heading"></h4>
+  {%for msg in messages %}
+  <!--<p> {{msg}}</p> -->
+  <h4 class="alert-heading">{{msg}}</h4>
+  <p class="mb-0"></p>
+
+  {%endfor%}
+</div>
+</div>
+{%endif%}
+
+<div class="container">
+  <div class="home-body">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Note: This is a beta version, not represent the final product, also may have some bugs.</strong> 
+    </div>
+    
+    <script>
+      $(".alert").alert();
+    </script>
+  </div> 
+  <div class="jumbotron">
+ 
+    <div id='flex-container'>
+      
+      <div class="flex-item ">
+        <h3 class="donor-header">Donor</h3>
+        <p>
+          If you are donor just register and add your details , and you will be
+          notified if there is any life you can save it.
+          <a href="{% url 'accounts:signup' %}" > Click Here To Register</a>.
+        </p>
+        <img src="{% static 'img/1.jpg' %}" alt="donor">
+      </div>
+      <div class="flex-item">
+        <h3 class="seeker-header">Seeker </h3>
+    <p>
+      If you are seeker ,fill the from and when the system find a donor you will
+      be notified and donor will contact you,also system will send you donor's communication info. 
+      <a href="{% url 'bbank:patient'%}">Click Here To Fill The Form.</a> 
+    </p>
+    <img src="{% static 'img/2.jpg' %}" alt="seeker" class="img2">
+      </div>
+    </div>
+    <br>
+    <div class="alert alert-dark" role="alert">
+      <strong>    Note: Currently, This service available only in <span class="eg">EGYPT</span></strong>
+    </div>
+
+  </div>
+</div>
+
+{%endblock%}
+
+
+<!-- TODO: add footer-->

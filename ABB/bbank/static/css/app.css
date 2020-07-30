@@ -1,0 +1,84 @@
+.navbar-brand{
+    font-family: 'Fredoka One', cursive;
+}
+
+.home-body {
+    margin-top: 10px;
+}
+
+#flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -40px;
+    justify-content: space-between;
+}
+
+
+.flex-item {
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 450px;    
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 0;
+    transition: transform .2s;
+
+}
+.flex-item:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+.flex-item h3{
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+body{
+    background-color: #f1f1f1;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fec5c5' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.flex-item img {
+    width: 380px;
+    height: 250px;
+    margin-top: -10px;
+    border-radius: 5px;
+}
+
+.flex-item p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+.flex-item .img2 {
+    height: 200px;
+}
+
+.donor-header{
+    color: green;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.seeker-header {
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.green{
+    color: green;
+}
+
+.navy{
+    margin-top: -5px;
+}
+
+.linky{
+    margin-bottom: -25px;
+}
+.eg{
+    letter-spacing: 1px;
+}

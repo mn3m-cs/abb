@@ -1,0 +1,23 @@
+{% extends 'bbank/base.html' %}
+
+{%block title_block%} <title>My account</title>{%endblock%}
+
+{%block content%}
+<div class="container">
+    <nav class="breadcrumb my-4">
+        <span class="breadcrumb-item">My account</span>
+        <span class="breadcrumb-item "><a href="{% url 'accounts:my_account' %}">Account Details</a></span>
+        <span class="breadcrumb-item active ">Profile Details</span>
+    
+    </nav>    
+    <div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+    <form  method="post" novalidate enctype="multipart/form-data">
+        {%csrf_token%}
+        {%include 'includes/form.html'%}
+        <button type="submit" class="btn btn-success">Save changes</button>
+    </form>
+</div></div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,69 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.25">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}" defer></script>
+    <script src="{% static 'js/popper.min.js' %}" defer></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" defer></script>    
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet"> 
+    {% block css_block %}    {%endblock%}
+    {%block title_block%} <title>ABB</title>{%endblock%}
+
+    <!--<link rel="stylesheet" href="{% static 'css/login.css' %}">-->
+  </head>
+
+  <body>
+    {% block body%}
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'bbank:home' %}">Auto BloodBank</a>
+        <ul class="navbar-nav  mr-auto">
+          <li class="nav-item navy">
+            <a class="nav-link linky" href="{% url 'bbank:patient' %}"> Blood Request </a>&nbsp;
+          </li>
+          <li class="nav-item navy"> 
+            <a class="nav-link linky" href="{% url 'bbank:about' %}"> About </a>&nbsp;
+          </li>
+      </ul> 
+      {%if user.is_authenticated%}
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.username }}</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                <!-- TODO: blood requests history <a class="dropdown-item" href="{% url 'accounts:profile' %}">History</a> -->
+                <a class="dropdown-item" href="{% url 'accounts:my_account' %}">My account</a>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'accounts:logout' %}">Log out</a>
+              </div>
+            </li> 
+          </ul>
+        </div>
+        {%else%}
+        <form class="form-inline ml-auto">
+          <a href="{%url 'accounts:login'%}" class="btn btn-outline-secondary">Log in</a>
+          <a href="{% url 'accounts:signup' %}" class="btn btn-primary ml-2">Sign up</a>
+        </form>
+
+        {%endif%}
+        
+      </div>
+    </nav>
+
+    {% block content %}
+    <!--Any thing out of this will be inherited-->
+    {%endblock%}
+{% endblock body%}
+  </body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'bbank/base.html' %}
+
+{%block title_block%} <title>About ABB </title> {%endblock%}
+
+{%block content%}
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4 green"> What is The Auto BloodBank System?</h1>
+        <p class="lead">Automate The Full Donation Process </p>
+        <hr class="my-2">
+        <ul >
+            <li>
+                <p>Automatic Donation System, is an innovative technology give innovative approaches to manage blood Donation 
+                    <br>progress as an alternative for traditional blood banks which costs time, effort, exposed to human errors also a donor
+                     <br> and patient data not secret as desirable.
+                </p>        
+            </li>
+            <li>
+                <p>
+                    The system aims to facilitate and speed up the donation progress and achieve privacy.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We tried to make the system as simple as possible to be usable by normal people.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The progress of Donation is fully automated.
+                </p>
+            </li>
+        </ul>
+        <br>
+        
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{%url 'bbank:contact_us' %}" role="button">Contact Us </a> <!--open email app-->
+        </p>
+    </div>
+
+</div>
+
+
+
+
+{%endblock%}

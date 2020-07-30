@@ -1,0 +1,22 @@
+{% extends 'bbank/base.html' %} 
+{%load static%}
+{% block title_block %}
+<title>Register</title> 
+{%endblock%} 
+
+{% block css_block %} 
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{%block content%} 
+<div class="container" class="login">
+  <div class="jumbotron">
+    <h1>Patient Info </h1>
+    <form method="POST" enctype="multipart/form-data">
+      {%csrf_token%} 
+      {%include 'includes/form.html' %}
+      <input type="submit" value="Submit" class="btn btn-primary btn-lg" />
+    </form>
+</div>
+</div>
+{%endblock%}

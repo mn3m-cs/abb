@@ -1,0 +1,35 @@
+{% extends 'bbank/base.html' %} 
+{%load static%}
+{% block title_block %}
+<title>Register</title> 
+{%endblock%} 
+
+{% block css_block %} 
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{%block content%} 
+{% if registered %}
+<div class="container" >
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading"></h4>
+        <p>Thanks For Registering, <a href="{% url 'bbank:user_login'  %}">Login</a></p>  
+        <p class="mb-0"></p>
+      </div>
+</div>
+
+{%else%}
+<div class="container" class="login">
+  <div class="jumbotron">
+  
+    <h1>Register</h1>
+    <form method="POST" novalidate enctype="multipart/form-data">
+      {%csrf_token%} 
+      {%include 'includes/userform.html' %}
+      {%include 'includes/profileform.html'%}
+      <input class="btn btn-primary btn-lg" type="submit" value="Register" />
+    </form>
+</div>
+</div>
+  {%endif%}
+{%endblock%}

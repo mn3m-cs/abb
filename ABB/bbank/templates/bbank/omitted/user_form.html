@@ -1,0 +1,29 @@
+{% extends 'bbank/base.html' %} 
+{%load static%}
+{% block title_block %}
+<title>Register</title> 
+{%endblock%} 
+{% block css_block %} 
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+{% endblock %}
+
+{%block content%} 
+
+<div class="login" >
+    <h1>
+        {% if not form.instance.pk %}
+            Register
+        {%else%}
+            Update Info
+        {%endif%}
+        </h1>
+    <form method="POST" enctype="multipart/form-data">
+      {%csrf_token%} 
+      {%include 'includes/form.html' %}
+      <input type="submit" value="Update" />
+    </form>
+</div>
+
+{%endblock%}
